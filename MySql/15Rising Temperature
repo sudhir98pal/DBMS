@@ -38,9 +38,9 @@ In 2015-01-02, temperature was higher than the previous day (10 -> 25).
 In 2015-01-04, temperature was higher than the previous day (30 -> 20).
 
 ***************************
-# Write your MySQL query statement below
 
 #select a.id from Weather a,Weather b where day(a.recordDate)=day(b.recordDate)+1  and #a.Temperature>b.Temperature
-# this will not word as date +1 actually add 1
-
+# this will not work as date +1 not actually adding 1 to the date
+#thus
+solution------------------
 select a.id from Weather a,Weather b where datediff(a.recordDate,b.recordDate)=1  and a.Temperature>b.Temperature
